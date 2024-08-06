@@ -52,6 +52,14 @@ usuario_encontrado_binaria = busca_binaria(usuarios, nome_usuario_procurado, 'no
 print(f"Busca sequencial - Usuário encontrado: {usuario_encontrado_sequencial.nome if usuario_encontrado_sequencial else 'Não encontrado'}")
 print(f"Busca binária - Usuário encontrado: {usuario_encontrado_binaria.nome if usuario_encontrado_binaria else 'Não encontrado'}")
 
+# Buscando um usuário que não existe
+nome_usuario_inexistente = "Usuario_Inexistente"
+usuario_inexistente_sequencial = busca_sequencial(usuarios, nome_usuario_inexistente, 'nome')
+usuario_inexistente_binaria = busca_binaria(usuarios, nome_usuario_inexistente, 'nome')
+
+print(f"Busca sequencial - Usuário não encontrado: {'Usuário encontrado' if usuario_inexistente_sequencial else 'Não encontrado'}")
+print(f"Busca binária - Usuário não encontrado: {'Usuário encontrado' if usuario_inexistente_binaria else 'Não encontrado'}")
+
 # Buscando um evento pelo nome
 nome_evento_procurado = "Evento_2"
 evento_encontrado_sequencial = busca_sequencial(eventos, nome_evento_procurado, 'nome')
