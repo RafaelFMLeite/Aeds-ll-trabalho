@@ -1,19 +1,19 @@
-def busca_sequencial(lista, chave, atributo):
+def busca_sequencial(lista, atributo, valor):
     for item in lista:
-        if getattr(item, atributo) == chave:
+        if getattr(item, atributo) == valor:
             return item
     return None
 
-def busca_binaria(lista, chave, atributo):
-    lista.sort(key=lambda x: getattr(x, atributo))
-    esquerda, direita = 0, len(lista) - 1
-    while esquerda <= direita:
-        meio = (esquerda + direita) // 2
-        valor_meio = getattr(lista[meio], atributo)
-        if valor_meio == chave:
-            return lista[meio]
-        elif valor_meio < chave:
-            esquerda = meio + 1
+def busca_binaria(lista, atributo, valor):
+    inicio = 0
+    fim = len(lista) - 1
+
+    while inicio <= fim:
+        meio = (inicio + fim) // 2
+        if getattr(lista[meio], atributo) < valor:
+            inicio = meio + 1
+        elif getattr(lista[meio], atributo) > valor:
+            fim = meio - 1
         else:
-            direita = meio - 1
+            return lista[meio]
     return None
