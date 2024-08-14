@@ -23,11 +23,18 @@ def criar_evento_interface():
         organizador = next((u for u in usuarios if u.nome == nome_organizador), None)
         
         if organizador:
-            evento = Evento(gerar_id(), nome_evento, organizador.id_usuario)
             eventos = carregar_dados('dados/eventos.pkl')
-            eventos.append(evento)
-            salvar_dados(eventos, 'dados/eventos.pkl')
-            messagebox.showinfo("Sucesso", "Evento criado com sucesso!")
+            
+            # Verificar se já existe um evento com o mesmo nome e organizador
+            evento_existente = next((e for e in eventos if e.nome == nome_evento and e.organizador_id == organizador.id_usuario), None)
+            
+            if evento_existente:
+                messagebox.showerror("Erro", "Um evento com esse nome e organizador já existe.")
+            else:
+                evento = Evento(gerar_id(), nome_evento, organizador.id_usuario)
+                eventos.append(evento)
+                salvar_dados(eventos, 'dados/eventos.pkl')
+                messagebox.showinfo("Sucesso", "Evento criado com sucesso!")
         else:
             messagebox.showerror("Erro", "Organizador não encontrado")
 
