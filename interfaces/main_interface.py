@@ -15,5 +15,4 @@ def iniciar_interface():
 
     root.mainloop()
 
-# Iniciar a interface
-iniciar_interface()
+
