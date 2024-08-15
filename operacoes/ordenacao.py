@@ -1,29 +1,47 @@
-def merge_sort(dados, chave):
-    if len(dados) > 1:
-        mid = len(dados) // 2
-        left_half = dados[:mid]
-        right_half = dados[mid:]
+# operacoes/ordenacao.py
 
-        merge_sort(left_half, chave)
-        merge_sort(right_half, chave)
+from entidades.usuario import Usuario
+from entidades.convidado import Convidado
+from entidades.comida import Comida
+from entidades.bebida import Bebida
 
-        i = j = k = 0
+def merge_sort(lista, key_func):
+    if len(lista) <= 1:
+        return lista
 
-        while i < len(left_half) and j < len(right_half):
-            if getattr(left_half[i], chave, float('inf')) < getattr(right_half[j], chave, float('inf')):
-                dados[k] = left_half[i]
-                i += 1
-            else:
-                dados[k] = right_half[j]
-                j += 1
-            k += 1
+    meio = len(lista) // 2
+    esquerda = merge_sort(lista[:meio], key_func)
+    direita = merge_sort(lista[meio:], key_func)
 
-        while i < len(left_half):
-            dados[k] = left_half[i]
+    return merge(esquerda, direita, key_func)
+
+def merge(esquerda, direita, key_func):
+    resultado = []
+    i = j = 0
+
+    while i < len(esquerda) and j < len(direita):
+        if key_func(esquerda[i]) <= key_func(direita[j]):
+            resultado.append(esquerda[i])
             i += 1
-            k += 1
-
-        while j < len(right_half):
-            dados[k] = right_half[j]
+        else:
+            resultado.append(direita[j])
             j += 1
-            k += 1
+
+    resultado.extend(esquerda[i:])
+    resultado.extend(direita[j:])
+    return resultado
+
+def key_func(item):
+    if isinstance(item, Usuario):
+        return item.id_usuario
+    elif isinstance(item, Convidado):
+        return item.id_convidado
+    elif isinstance(item, Comida):
+        return item.id_comida
+    elif isinstance(item, Bebida):
+        return item.id_bebida
+    else:
+        raise AttributeError("Entidade não tem um atributo de ID conhecido.")
+
+def ordenar_dados(dados):
+    return merge_sort(dados, key_func)

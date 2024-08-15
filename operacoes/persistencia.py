@@ -18,13 +18,15 @@ def carregar_dados(filename):
         return []
 
 def gerar_id():
-    return ''.join(random.choices(string.ascii_letters + string.digits, k=6))
+    # ID é composto de 6 caracteres alfanuméricos, seguido de um sufixo numérico
+    sufixo = f"_{random.randint(1, 999):03d}"
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=6)) + sufixo
 
 def gerar_dados():
-    usuarios = [Usuario(gerar_id(), f"Usuario_{i}") for i in range(80)]
-    convidados = [Convidado(gerar_id(), f"Convidado_{i}", random.choice([True, False])) for i in range(80)]
-    comidas = [Comida(gerar_id(), f"Comida_{i}") for i in range(80)]
-    bebidas = [Bebida(gerar_id(), f"Bebida_{i}") for i in range(80)]
+    usuarios = [Usuario(gerar_id(), f"Usuario_{gerar_id()}") for i in range(80)]
+    convidados = [Convidado(gerar_id(), f"Convidado_{gerar_id()}", random.choice([True, False])) for i in range(80)]
+    comidas = [Comida(gerar_id(), f"Comida_{gerar_id()}") for i in range(80)]
+    bebidas = [Bebida(gerar_id(), f"Bebida_{gerar_id()}") for i in range(80)]
 
     salvar_dados(usuarios, 'dados/usuarios.pkl')
     salvar_dados(convidados, 'dados/convidados.pkl')
