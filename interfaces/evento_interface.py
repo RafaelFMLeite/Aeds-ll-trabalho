@@ -18,16 +18,23 @@ def criar_evento_interface():
     organizador_combo.pack()
 
     def salvar_evento():
-        nome_evento = nome_entry.get()
+        nome_evento = nome_entry.get().strip()
         nome_organizador = organizador_combo.get()
         organizador = next((u for u in usuarios if u.nome == nome_organizador), None)
         
         if organizador:
-            evento = Evento(gerar_id(), nome_evento, organizador.id_usuario)
             eventos = carregar_dados('dados/eventos.pkl')
-            eventos.append(evento)
-            salvar_dados(eventos, 'dados/eventos.pkl')
-            messagebox.showinfo("Sucesso", "Evento criado com sucesso!")
+            
+            # Verificar se já existe um evento com o mesmo nome
+            evento_existente = next((e for e in eventos if e.nome == nome_evento), None)
+            
+            if evento_existente:
+                messagebox.showerror("Erro", "Já existe um evento com esse nome. Escolha outro nome.")
+            else:
+                evento = Evento(gerar_id(), nome_evento, organizador.id_usuario)
+                eventos.append(evento)
+                salvar_dados(eventos, 'dados/eventos.pkl')
+                messagebox.showinfo("Sucesso", "Evento criado com sucesso!")
         else:
             messagebox.showerror("Erro", "Organizador não encontrado")
 
