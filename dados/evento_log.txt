@@ -1,5 +1,1 @@
-2024-08-15 13:10:20,510 - INFO - Evento criado: Aula de AEDS 2 com ID: ZcmpTC
-2024-08-15 13:11:25,827 - INFO - Comida Comida_a adicionada ao evento Aula de AEDS 2
-2024-08-15 13:11:25,827 - INFO - Bebida Bebida_c adicionada ao evento Aula de AEDS 2
-2024-08-15 13:11:25,827 - INFO - Convidado Convidado_j adicionado ao evento Aula de AEDS 2
-2024-08-15 13:12:06,364 - WARNING - Tentativa de criar evento com nome duplicado: Aula de AEDS 2
+2024-08-15 16:19:52,474 - INFO - Evento criado: Aula com ID: iobfJJ

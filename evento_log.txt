@@ -1,0 +1,7 @@
+2024-08-15 12:42:42,555 - INFO - Evento criado: Aula de AEDS 2 com ID: zkyasy
+2024-08-15 12:42:44,351 - WARNING - Tentativa de criar evento com nome duplicado: Aula de AEDS 2
+2024-08-15 12:42:48,943 - INFO - Evento criado: Aula de AEDS 3 com ID: xGZCFr
+2024-08-15 12:42:53,061 - INFO - Evento criado: Aula de AEDS 1 com ID: vtlWLR
+2024-08-15 12:43:18,121 - INFO - Comida Comida_1 adicionada ao evento Aula de AEDS 1
+2024-08-15 12:43:18,121 - INFO - Bebida Bebida_1 adicionada ao evento Aula de AEDS 1
+2024-08-15 12:43:18,121 - INFO - Convidado Convidado_1 adicionado ao evento Aula de AEDS 1

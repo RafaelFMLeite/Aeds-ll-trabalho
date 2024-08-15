@@ -1,4 +1,3 @@
-
 def adicionar_convidado_evento(evento, convidado):
     evento.adicionar_convidado(convidado)
 
