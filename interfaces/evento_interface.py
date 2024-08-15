@@ -3,6 +3,15 @@ from tkinter import ttk, messagebox
 from entidades.evento import Evento
 from operacoes.persistencia import salvar_dados, carregar_dados, gerar_id
 from operacoes.interacoes import adicionar_convidado_evento, adicionar_comida_evento, adicionar_bebida_evento
+import logging
+
+# Configuração do log para gravar em um arquivo
+logging.basicConfig(
+    filename='dados/evento_log.txt',
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filemode='w'  # Modo de escrita. Usa 'a' para anexar aos logs existentes.
+)
 
 def criar_evento_interface():
     root = tk.Tk()
@@ -30,13 +39,16 @@ def criar_evento_interface():
             
             if evento_existente:
                 messagebox.showerror("Erro", "Já existe um evento com esse nome. Escolha outro nome.")
+                logging.warning(f"Tentativa de criar evento com nome duplicado: {nome_evento}")
             else:
                 evento = Evento(gerar_id(), nome_evento, organizador.id_usuario)
                 eventos.append(evento)
                 salvar_dados(eventos, 'dados/eventos.pkl')
                 messagebox.showinfo("Sucesso", "Evento criado com sucesso!")
+                logging.info(f"Evento criado: {evento.nome} com ID: {evento.id_evento}")
         else:
             messagebox.showerror("Erro", "Organizador não encontrado")
+            logging.error(f"Organizador {nome_organizador} não encontrado")
 
     tk.Button(root, text="Salvar Evento", command=salvar_evento).pack()
 
@@ -81,15 +93,19 @@ def adicionar_itens_evento_interface():
 
             if comida:
                 adicionar_comida_evento(evento, comida)
+                logging.info(f"Comida {comida.nome} adicionada ao evento {evento.nome}")
             if bebida:
                 adicionar_bebida_evento(evento, bebida)
+                logging.info(f"Bebida {bebida.nome} adicionada ao evento {evento.nome}")
             if convidado:
                 adicionar_convidado_evento(evento, convidado)
+                logging.info(f"Convidado {convidado.nome} adicionado ao evento {evento.nome}")
 
             salvar_dados(eventos, 'dados/eventos.pkl')
             messagebox.showinfo("Sucesso", "Itens adicionados com sucesso!")
         else:
             messagebox.showerror("Erro", "Evento não encontrado")
+            logging.error(f"Evento {nome_evento} não encontrado")
 
     tk.Button(root, text="Adicionar Itens", command=adicionar_itens).pack()
 
