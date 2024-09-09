@@ -1,0 +1,74 @@
+Partição 1:
+  Evento ID: 6rfZ5v, Nome: Evento_bd
+  Evento ID: 70wqwp, Nome: Evento_g
+  Evento ID: Kmvljy, Nome: Evento_bg
+  Evento ID: b72eRP, Nome: Evento_bc
+  Evento ID: dhNjDQ, Nome: Evento_i
+Tamanho da partição 1: 5 eventos
+
+Partição 2:
+  Evento ID: AexxLn, Nome: Evento_bj
+  Evento ID: IbVj3y, Nome: Evento_a
+  Evento ID: LO64rA, Nome: Evento_ah
+  Evento ID: Q7qUgl, Nome: Evento_az
+Tamanho da partição 2: 4 eventos
+
+Partição 3:
+  Evento ID: HYteX3, Nome: Evento_ai
+  Evento ID: LPrJlP, Nome: Evento_bi
+  Evento ID: LWSQRc, Nome: Evento_ba
+  Evento ID: NsT1ME, Nome: Evento_bb
+Tamanho da partição 3: 4 eventos
+
+Partição 4:
+  Evento ID: 75W6hA, Nome: Evento_b
+  Evento ID: 7K0xjo, Nome: Evento_r
+Tamanho da partição 4: 2 eventos
+
+Partição 5:
+  Evento ID: 6BVcif, Nome: Evento_q
+  Evento ID: Km26G9, Nome: Evento_j
+  Evento ID: KvrrVQ, Nome: Evento_av
+Tamanho da partição 5: 3 eventos
+
+Partição 6:
+  Evento ID: 4sL1t9, Nome: Evento_ca
+  Evento ID: 7feiDH, Nome: Evento_by
+  Evento ID: 80mybC, Nome: Evento_o
+Tamanho da partição 6: 3 eventos
+
+Partição 7:
+  Evento ID: 3p8u0y, Nome: Evento_c
+  Evento ID: 3vHsTQ, Nome: Evento_n
+  Evento ID: 5HNQWx, Nome: Evento_f
+  Evento ID: 9DKEqU, Nome: Evento_bt
+  Evento ID: RTim1a, Nome: Evento_w
+Tamanho da partição 7: 5 eventos
+
+Partição 8:
+  Evento ID: FtDSPj, Nome: Evento_ay
+  Evento ID: IRQXJr, Nome: Evento_br
+  Evento ID: Mj6ifh, Nome: Evento_aq
+  Evento ID: OgykOd, Nome: Evento_k
+  Evento ID: PCpwyg, Nome: Evento_p
+  Evento ID: Yvsr6q, Nome: Evento_bn
+Tamanho da partição 8: 6 eventos
+
+Partição 9:
+  Evento ID: 8CPEOr, Nome: Evento_be
+  Evento ID: 9ngeSA, Nome: Evento_ac
+  Evento ID: A7U2ef, Nome: Evento_bz
+  Evento ID: DTHaxa, Nome: Evento_bx
+  Evento ID: JM0gEr, Nome: Evento_ad
+  Evento ID: P5FRmf, Nome: Evento_an
+  Evento ID: QCxMJ3, Nome: Evento_v
+  Evento ID: WLB0Kz, Nome: Evento_bs
+Tamanho da partição 9: 8 eventos
+
+Partição 10:
+  Evento ID: 0O5XtD, Nome: Evento_e
+  Evento ID: HJY3Vt, Nome: Evento_l
+  Evento ID: Ilevpx, Nome: Evento_x
+  Evento ID: idi6qN, Nome: Evento_h
+Tamanho da partição 10: 4 eventos
+

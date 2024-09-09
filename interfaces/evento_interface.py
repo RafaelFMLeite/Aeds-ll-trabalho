@@ -4,6 +4,9 @@ from entidades.evento import Evento
 from operacoes.persistencia import salvar_dados, carregar_dados, gerar_id  
 from operacoes.interacoes import adicionar_convidado_evento, adicionar_comida_evento, adicionar_bebida_evento  
 import logging 
+from operacoes.particoes import geracao_particoes_selecao_substituicao
+from operacoes.intercalacao import arvore_vencedores
+from operacoes.persistencia import carregar_dados, salvar_dados
 
 logging.basicConfig(
     filename='dados/evento_log.txt',
@@ -108,3 +111,26 @@ def adicionar_itens_evento_interface():
     tk.Button(root, text="Adicionar Itens", command=adicionar_itens).pack(pady=10)
 
     root.mainloop()
+    
+def gerar_particoes_selecao_substituicao_interface():
+    dados = carregar_dados('dados/eventos.pkl')
+    if not dados:
+        messagebox.showerror("Erro", "Nenhum dado encontrado")
+        return
+    
+    tam_memoria = 5  # Definir o tamanho da memória como necessário
+    particoes = geracao_particoes_selecao_substituicao(dados, tam_memoria)
+    
+    salvar_dados(particoes, 'dados/particoes_eventos.pkl')
+    messagebox.showinfo("Sucesso", f"Partições geradas com sucesso! Total: {len(particoes)}")
+
+def intercalar_particoes_arvore_vencedores_interface():
+    particoes = carregar_dados('dados/particoes_eventos.pkl')
+    if not particoes:
+        messagebox.showerror("Erro", "Nenhuma partição encontrada")
+        return
+    
+    resultado = arvore_vencedores(particoes)
+    
+    salvar_dados(resultado, 'dados/eventos_intercalados.pkl')
+    messagebox.showinfo("Sucesso", "Eventos intercalados com sucesso!")
