@@ -26,6 +26,12 @@ class Evento:
     # Método para comparação "maior ou igual"
     def __ge__(self, outro):
         return self.id_evento >= outro.id_evento
+    
+    def __str__(self):
+        return f"Evento ID: {self.id_evento}, Nome: {self.nome}"
+
+    def __repr__(self):
+        return f"Evento(ID: {self.id_evento}, Nome: '{self.nome}')"
 
     # Adicionar bebida ao evento
     def adicionar_bebida(self, bebida_id):
