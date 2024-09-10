@@ -3,7 +3,7 @@ import tkinter as tk  # criar a interface gráfica.
 # Importa funções de outros módulos que criam interfaces específicas para diferentes funcionalidades.
 from interfaces.busca_interface import buscar_evento_interface
 from interfaces.evento_interface import (
-    gerar_particoes_selecao_substituicao_interface, 
+    gerar_particoes_por_letra_interface,  # Atualize para o nome correto da função
     intercalar_particoes_arvore_vencedores_interface,
     criar_evento_interface,
     adicionar_itens_evento_interface
@@ -21,7 +21,7 @@ def iniciar_interface():
     tk.Button(root, text="Buscar Evento", command=buscar_evento_interface).pack(pady=10)
     tk.Button(root, text="Adicionar Itens ao Evento", command=adicionar_itens_evento_interface).pack(pady=10)
     tk.Button(root, text="Ordenar Dados", command=ordenar_dados_interface).pack(pady=10)
-    tk.Button(root, text="Gerar Partições (Seleção por Substituição)", command=gerar_particoes_selecao_substituicao_interface).pack(pady=10)
+    tk.Button(root, text="Gerar Partições (Por Letra)", command=gerar_particoes_por_letra_interface).pack(pady=10)  # Atualize para o nome correto da função
     tk.Button(root, text="Intercalar Partições (Árvore de Vencedores)", command=intercalar_particoes_arvore_vencedores_interface).pack(pady=10)
 
     # loop

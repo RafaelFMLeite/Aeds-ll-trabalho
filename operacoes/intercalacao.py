@@ -4,10 +4,10 @@ from operacoes.persistencia import salvar_dados
 class NoVencedor:
     def __init__(self, indice, valor):
         self.indice = indice
-        self.valor = valor
-    
+        self.valor = valor  # `valor` deve ser um objeto Evento
+
     def __lt__(self, outro):
-        return self.valor < outro.valor
+        return self.valor.nome < outro.valor.nome  # Comparar por nome (ordem alfabética)
 
     def __repr__(self):
         return f"NoVencedor(indice={self.indice}, valor={self.valor})"
