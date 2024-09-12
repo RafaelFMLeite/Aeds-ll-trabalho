@@ -21,7 +21,13 @@ def carregar_dados(filename):
 
 # Função para gerar um ID aleatório
 def gerar_id():
+<<<<<<< HEAD
+    # ID é composto de 6 caracteres alfanuméricos, seguido de um sufixo numérico
+    sufixo = f"_{random.randint(1, 999):03d}"
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=6)) + sufixo
+=======
     return ''.join(random.choices(string.ascii_letters + string.digits, k=6))  # Gera um ID com 6 caracteres aleatórios
+>>>>>>> development
 
 # Função para gerar nomes de entidades, como "Usuario_a", "Usuario_b", etc.
 def gerar_nome_entidade(entidade, index):
@@ -36,12 +42,19 @@ def gerar_nome_entidade(entidade, index):
 
 # Função para gerar dados de usuários, convidados, comidas, bebidas e eventos
 def gerar_dados():
+<<<<<<< HEAD
+    usuarios = [Usuario(gerar_id(), f"Usuario_{gerar_id()}") for i in range(80)]
+    convidados = [Convidado(gerar_id(), f"Convidado_{gerar_id()}", random.choice([True, False])) for i in range(80)]
+    comidas = [Comida(gerar_id(), f"Comida_{gerar_id()}") for i in range(80)]
+    bebidas = [Bebida(gerar_id(), f"Bebida_{gerar_id()}") for i in range(80)]
+=======
     # Carrega dados existentes
     usuarios = carregar_dados('dados/usuarios.pkl')
     convidados = carregar_dados('dados/convidados.pkl')
     comidas = carregar_dados('dados/comidas.pkl')
     bebidas = carregar_dados('dados/bebidas.pkl')
     eventos = carregar_dados('dados/eventos.pkl')
+>>>>>>> development
 
     # Se não houver usuários salvos, gera novos
     if not usuarios:
