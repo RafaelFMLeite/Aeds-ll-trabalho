@@ -6,7 +6,7 @@ from operacoes.persistencia import salvar_dados, carregar_dados, gerar_id
 from operacoes.interacoes import adicionar_convidado_evento, adicionar_comida_evento, adicionar_bebida_evento
 import logging
 from operacoes.particoes import gerar_particoes_por_letra_com_log
-from operacoes.intercalacao import arvore_vencedores
+from operacoes.intercalacao import arvore_vencedores, carregar_particoes
 
 # Configuração do logging
 logging.basicConfig(
@@ -128,12 +128,15 @@ def gerar_particoes_por_letra_interface():
     messagebox.showinfo("Sucesso", f"Partições por letra geradas com sucesso! Total: {len(particoes)}")
 
 def intercalar_particoes_arvore_vencedores_interface():
-    particoes = carregar_dados('dados/particoes_eventos_por_letra.pkl')
-    if not particoes:
-        messagebox.showerror("Erro", "Nenhuma partição encontrada")
-        return
+    try:
+        # Carregar partições do arquivo
+        particoes = carregar_particoes('dados/particoes_eventos_por_letra.pkl')
+        
+        if not particoes:
+            raise ValueError("Nenhuma partição encontrada")
 
-    resultado = arvore_vencedores(particoes)
-
-    salvar_dados(resultado, 'dados/eventos_intercalados.pkl')
-    messagebox.showinfo("Sucesso", "Eventos intercalados com sucesso!")
+        resultado = arvore_vencedores(particoes)  # Intercala as partições
+        salvar_dados(resultado, 'dados/eventos_intercalados.pkl')
+        messagebox.showinfo("Sucesso", "Eventos intercalados com sucesso!")
+    except Exception as e:
+        messagebox.showerror("Erro", str(e))

@@ -1,4 +1,5 @@
 import heapq
+import pickle
 from operacoes.persistencia import salvar_dados
 
 class NoVencedor:
@@ -11,6 +12,11 @@ class NoVencedor:
 
     def __repr__(self):
         return f"NoVencedor(indice={self.indice}, valor={self.valor})"
+
+def carregar_particoes(caminho_arquivo='dados/particoes_eventos_por_letra.pkl'):
+    with open(caminho_arquivo, 'rb') as arquivo:
+        particoes = pickle.load(arquivo)
+    return particoes
 
 def arvore_vencedores(particoes):
     heap = []

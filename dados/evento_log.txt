@@ -1,0 +1,2 @@
+2024-09-19 17:29:20,260 - INFO - Evento criado: Almocar com ID: rJsuNh
+2024-09-19 17:29:25,774 - INFO - Evento criado: Jantar com ID: nYt3hR
