@@ -2,6 +2,7 @@ import os
 from operacoes.persistencia import InicializandoBase, CarregarDados
 from operacoes.particao import SelecionarPorSubstituicao
 from operacoes.arvore_binaria_vencedores import intercalar_particoes
+from operacoes.arvore_b import BTree
 
 if __name__ == "__main__":
     # Inicializando a base de dados se necessário
@@ -18,10 +19,33 @@ if __name__ == "__main__":
     else:
         print(f"Arquivo {arquivo_para_ordenar} carregado com sucesso.")
 
-        # Definindo o tamanho da memória (quantidade de itens que cabem no heap)
-        tamanho_memoria = 50  # Ajuste este valor para definir o tamanho do heap
+        # Criando uma árvore B para armazenar e ordenar os eventos
+        btree = BTree(3)  # Grau mínimo da árvore B
 
-        # Passo 1: Gera as partições iniciais utilizando Seleção por Substituicao
+        # Inserindo todos os eventos na árvore B
+        for evento in dados:
+            btree.insert(evento)
+
+        # Travessia da árvore B para exibir os eventos ordenados
+        print("Eventos na árvore B:")
+        btree.traverse()
+        """""
+        id_evento_para_deletar = 101
+        btree.delete(id_evento_para_deletar)
+        print(f"Evento com ID {id_evento_para_deletar} excluído da árvore B.")
+        """""
+        # Exemplo de busca por um evento com ID específico
+        id_evento_para_buscar = 102
+        evento_encontrado = btree.search(id_evento_para_buscar)
+        if evento_encontrado:
+            print(f"Evento encontrado: ID = {evento_encontrado.id_evento}, Nome = {evento_encontrado.nome}")
+        else:
+            print(f"Evento com ID {id_evento_para_buscar} não encontrado.")
+
+        # Agora podemos seguir com a ordenação externa utilizando partições:
+        tamanho_memoria = 50  # Defina o tamanho do heap
+
+        # Passo 1: Gera as partições iniciais utilizando Seleção por Substituição
         SelecionarPorSubstituicao(arquivo_para_ordenar, tamanho_memoria)
 
         # Passo 2: Intercala as partições para gerar o arquivo final ordenado

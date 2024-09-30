@@ -4,13 +4,7 @@ import heapq
 from operacoes.persistencia import SalvarDados, SalvarDadosTxt, CarregarDados
 
 def SelecionarPorSubstituicao(filename, tam_memoria):
-    """
-    Realiza a seleção por substituição para ordenar os dados e gerar corridas iniciais.
-    
-    Parameters:
-    - filename: Nome do arquivo de entrada com os dados desordenados.
-    - tam_memoria: Tamanho da memória disponível (número de itens que cabem no heap).
-    """
+ 
     dados = CarregarDados(filename)
     if not dados:
         print(f"O arquivo {filename} está vazio ou não foi encontrado.")
@@ -58,18 +52,11 @@ def SelecionarPorSubstituicao(filename, tam_memoria):
         SalvarDadosTxt(corrida_atual, nome_particao)
         particoes.append(nome_particao)
 
-    print(f"Partições criadas: {particoes}")
     return particoes
 
 
 def IntercalarParticoes(particoes, output_file):
-    """
-    Função para intercalar as partições ordenadas e gerar um arquivo final ordenado.
 
-    Parameters:
-    - particoes: Lista de nomes das partições
-    - output_file: Nome do arquivo de saída ordenado
-    """
     heap = []
     arquivos = []
 
