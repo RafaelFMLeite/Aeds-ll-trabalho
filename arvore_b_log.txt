@@ -1,0 +1,132 @@
+Log da Arvore B
+================
+Solicitacao de insercao do Evento ID 7.
+Iniciando busca pelo Evento ID 7.
+Evento ID 7 nao encontrado na arvore.
+Evento ID 7 inserido no no folha com chaves agora: [7].
+Solicitacao de insercao do Evento ID 8.
+Iniciando busca pelo Evento ID 8.
+Evento ID 8 nao encontrado na arvore.
+Evento ID 8 inserido no no folha com chaves agora: [7, 8].
+Solicitacao de insercao do Evento ID 5.
+Iniciando busca pelo Evento ID 5.
+Evento ID 5 nao encontrado na arvore.
+Evento ID 5 inserido no no folha com chaves agora: [5, 7, 8].
+Solicitacao de insercao do Evento ID 3.
+Iniciando busca pelo Evento ID 3.
+Evento ID 3 nao encontrado na arvore.
+Evento ID 3 inserido no no folha com chaves agora: [3, 5, 7, 8].
+Solicitacao de insercao do Evento ID 9.
+Iniciando busca pelo Evento ID 9.
+Evento ID 9 nao encontrado na arvore.
+Evento ID 9 inserido no no folha com chaves agora: [3, 5, 7, 8, 9].
+Solicitacao de insercao do Evento ID 1.
+Iniciando busca pelo Evento ID 1.
+Evento ID 1 nao encontrado na arvore.
+A raiz esta cheia. Dividindo a raiz.
+Dividindo o no com chaves [3, 5, 7, 8, 9].
+Movendo a chave 7 para o no pai.
+Evento ID 1 inserido no no folha com chaves agora: [1, 3, 5].
+Solicitacao de insercao do Evento ID 6.
+Iniciando busca pelo Evento ID 6.
+Descendo para o filho 0 para continuar a busca.
+Iniciando busca pelo Evento ID 6.
+Evento ID 6 nao encontrado na arvore.
+Evento ID 6 inserido no no folha com chaves agora: [1, 3, 5, 6].
+Solicitacao de insercao do Evento ID 4.
+Iniciando busca pelo Evento ID 4.
+Descendo para o filho 0 para continuar a busca.
+Iniciando busca pelo Evento ID 4.
+Evento ID 4 nao encontrado na arvore.
+Evento ID 4 inserido no no folha com chaves agora: [1, 3, 4, 5, 6].
+Solicitacao de insercao do Evento ID 2.
+Iniciando busca pelo Evento ID 2.
+Descendo para o filho 0 para continuar a busca.
+Iniciando busca pelo Evento ID 2.
+Evento ID 2 nao encontrado na arvore.
+O filho 0 com chaves [1, 3, 4, 5, 6] esta cheio. Dividindo.
+Dividindo o no com chaves [1, 3, 4, 5, 6].
+Movendo a chave 4 para o no pai.
+Evento ID 2 inserido no no folha com chaves agora: [1, 2, 3].
+Solicitacao de insercao do Evento ID 0.
+Iniciando busca pelo Evento ID 0.
+Descendo para o filho 0 para continuar a busca.
+Iniciando busca pelo Evento ID 0.
+Evento ID 0 nao encontrado na arvore.
+Evento ID 0 inserido no no folha com chaves agora: [0, 1, 2, 3].
+
+Estrutura Inicial da Arvore B:
+Nivel 0 - Chaves: [4, 7]
+    Nivel 1 - Chaves: [0, 1, 2, 3]
+    Nivel 1 - Chaves: [5, 6]
+    Nivel 1 - Chaves: [8, 9]
+Solicitacao de remocao do Evento ID 3.
+Evento ID 3 encontrado no no com chaves [0, 1, 2, 3].
+Evento ID 3 removido do no folha. Chaves restantes: [0, 1, 2].
+Evento ID 3 removido, se existia.
+Estrutura da Arvore B apos remocao:
+Nivel 0 - Chaves: [4, 7]
+    Nivel 1 - Chaves: [0, 1, 2]
+    Nivel 1 - Chaves: [5, 6]
+    Nivel 1 - Chaves: [8, 9]
+Solicitacao de remocao do Evento ID 9.
+Filhos mesclados. Novo no com chaves: [5, 6, 7, 8, 9].
+Evento ID 9 encontrado no no com chaves [5, 6, 7, 8, 9].
+Evento ID 9 removido do no folha. Chaves restantes: [5, 6, 7, 8].
+Evento ID 9 removido, se existia.
+Estrutura da Arvore B apos remocao:
+Nivel 0 - Chaves: [4]
+    Nivel 1 - Chaves: [0, 1, 2]
+    Nivel 1 - Chaves: [5, 6, 7, 8]
+Solicitacao de insercao do Evento ID 14.
+Iniciando busca pelo Evento ID 14.
+Descendo para o filho 1 para continuar a busca.
+Iniciando busca pelo Evento ID 14.
+Evento ID 14 nao encontrado na arvore.
+Evento ID 14 inserido no no folha com chaves agora: [5, 6, 7, 8, 14].
+Evento ID 14 inserido com sucesso.
+Estrutura da Arvore B apos insercao:
+Nivel 0 - Chaves: [4]
+    Nivel 1 - Chaves: [0, 1, 2]
+    Nivel 1 - Chaves: [5, 6, 7, 8, 14]
+Solicitacao de insercao do Evento ID 15.
+Iniciando busca pelo Evento ID 15.
+Descendo para o filho 1 para continuar a busca.
+Iniciando busca pelo Evento ID 15.
+Evento ID 15 nao encontrado na arvore.
+O filho 1 com chaves [5, 6, 7, 8, 14] esta cheio. Dividindo.
+Dividindo o no com chaves [5, 6, 7, 8, 14].
+Movendo a chave 7 para o no pai.
+Evento ID 15 inserido no no folha com chaves agora: [8, 14, 15].
+Evento ID 15 inserido com sucesso.
+Estrutura da Arvore B apos insercao:
+Nivel 0 - Chaves: [4, 7]
+    Nivel 1 - Chaves: [0, 1, 2]
+    Nivel 1 - Chaves: [5, 6]
+    Nivel 1 - Chaves: [8, 14, 15]
+Iniciando busca pelo Evento ID 4.
+Evento ID 4 encontrado: ID: 4, Tipo: Formatura, Data: 12/06/2025, Cliente: Juliana.
+Estrutura da Arvore B apos busca:
+Nivel 0 - Chaves: [4, 7]
+    Nivel 1 - Chaves: [0, 1, 2]
+    Nivel 1 - Chaves: [5, 6]
+    Nivel 1 - Chaves: [8, 14, 15]
+Solicitacao de remocao do Evento ID 6.
+Emprestando uma chave do irmão a esquerda. Chaves do no atual: [4, 5, 6].
+Evento ID 6 encontrado no no com chaves [4, 5, 6].
+Evento ID 6 removido do no folha. Chaves restantes: [4, 5].
+Evento ID 6 removido, se existia.
+Estrutura da Arvore B apos remocao:
+Nivel 0 - Chaves: [2, 7]
+    Nivel 1 - Chaves: [0, 1]
+    Nivel 1 - Chaves: [4, 5]
+    Nivel 1 - Chaves: [8, 14, 15]
+Iniciando busca pelo Evento ID 0.
+Descendo para o filho 0 para continuar a busca.
+Iniciando busca pelo Evento ID 0.
+Evento ID 0 encontrado: ID: 0, Tipo: Aniversario, Data: 11/12/2024, Cliente: Igor.
+Estrutura da Arvore B apos busca:
+Nivel 0 - Chaves: [2, 7]
+    Nivel 1 - Chaves: [0, 1]
+    Nivel 1 - Chaves: [4, 5]
+    Nivel 1 - Chaves: [8, 14, 15]
